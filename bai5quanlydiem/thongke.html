@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function thongke()
+            {
+                var mamon = document.getElementById("mamon").value;
+                if(mamon =="")
+                    alert("mã môn là bắt buộc");
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("get", "thongke.jsp?mamon="+mamon, false);
+                xmlhttp.send();
+                var kq = xmlhttp.responseText.trim();                
+                var s = kq.split(",");// kết quả bỏ đi dấu ','
+                kq = "Tổng số sinh viên: " + s[0] + "<br>";
+                kq += "Số sinh viên thi lại: " + s[1] + "<br>";
+                kq += "Ti lệ thi lại: " + Math.round(parseFloat(s[1]) * 100 / parseFloat(s[0])) + "%";
+                document.getElementById("kq").innerHTML = kq;
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center; color: red">Thống Kê</h1>      
+        nhập mã môn cần xem thống kê<input type="text" id="mamon"><br>
+        <button onclick="thongke()">đồng ý</button>
+        <div id="kq"></div>
+    </body>
+</html>

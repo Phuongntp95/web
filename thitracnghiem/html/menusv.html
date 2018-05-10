@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #menu ul {
+                list-style-type: none;
+                background-color: lightgray;
+                overflow: hidden;                
+            }
+            #menu li {               
+                float: left;
+            }            
+            #menu a {
+                display: block;
+                text-decoration: none;
+                color: blueviolet;
+                padding: 10px 15px;    
+                text-align: center;
+            }
+            
+            #menu div{
+                display: none;
+                position: absolute;
+                background-color: cyan;
+            }
+            #menu a:hover{
+                background-color: red;
+                color: white;
+            }
+            #menu li:hover div{
+                display:block;
+            }
+             #menu #content{
+                width:100%;
+                height:1000px;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center; color: red">SINH VIÊN </h1>
+        <div id="menu">
+            <ul >                  
+                <li><a href="thidang1.html" target="content">Thi Dạng 1</a></li> 
+                <li><a href="thidang2.html" target="content">Thi Dang 2</a></li> 
+            </ul>
+            <iframe id="content" name="content"></iframe>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script>
+            function nhapdiem() {
+                document.getElementById("msv").focus();
+                var masv = document.getElementById("msv").value.trim();
+                var diem = document.getElementById("diem").value.trim();
+                if (masv == "" || diem == "" || isNaN(diem) ||
+                        parseFloat(diem) < 0 || parseFloat(diem) > 10) {
+                    document.getElementById("kq").innerHTML ="Nhập sai!";
+                    return;
+                }
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("get", "nhapdiem.jsp?msv=" + masv + "&diem=" + diem, false);
+                xmlhttp.send();
+                document.getElementById("kq").innerHTML = xmlhttp.responseText;
+            }
+        </script>
+    </head>
+    <body>                      
+        <h3>Nhập điểm</h3>       
+        Mã sinh viên: <input id="msv" size="10" autofocus autocomplete="off" ><p>
+            Điểm thi: <input type="number" id="diem" min="0" max="10"><p>
+            <button onclick="nhapdiem();">Đồng Ý</button><p>  
+        <div id="kq"></div>
+    </body>
+</html>

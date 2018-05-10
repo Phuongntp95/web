@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script>
+            function xoadiem() {
+                document.getElementById("masv").focus();
+                var masv = document.getElementById("masv").value.trim();
+                var thongbao;
+                if (masv == "" || diem == "" || parseFloat(diem) < 0 || parseFloat(diem) > 10 || isNaN(diem))
+                {
+                    document.getElementById("thongbao").innerHTML = "Nhập sai!";
+                    return;
+                } 
+                               {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.open("get", "xoadiem.jsp?masv=" + masv + "&diemthi=" + diemthi, false);
+                    xmlhttp.send();
+                    document.getElementById("ketqua").innerHTML = xmlhttp.responseText;
+                }
+
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center; color: red">Xóa Điểm</h1>
+        <div id="form">
+            Nhập Mã SV cần xóa điểm <input type="text" id="masv"><br><br>            
+            Thông Báo  <div id="thongbao"></div><br>
+            <button onclick="xoadiem();">Xóa Điểm</button></div>
+    </body>
+</html>
