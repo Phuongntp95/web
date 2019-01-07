@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function nhapcauhoi(){
+                var textarea = document.getElementsByTagName("textarea");
+                for(var i=0; i<textarea.length; i++)
+                {
+                    if(textarea[i].value=""){
+                        alert("nhập câu hỏi chưa đủ");
+                    return;}
+                }
+                var xmhttp = new XMLHttpRequest();
+                xmhttp.open("get", "../jsp/nhapcauhoi.jsp?noidung="+ textarea[0].values+ "&caua="+textarea[1].value+
+                        "&caub="+ textarea[2].value +"&cauc="+textarea[3].value +"&dapan="+document.getElementById("dapan"))
+            }
+        </script>
+    </head>
+    <body>
+        Nội cung câu hỏi:<br> <textarea cols="10" rows ="5"></textarea><br><br>
+        Câua <br><textarea cols="10" rows ="5"></textarea><br><br>
+        Câub <br><textarea cols="10" rows ="5"></textarea><br><br>
+        Câuc <br><textarea cols="10" rows ="5"></textarea><br><br>
+        Đáp án: <br><select>
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+        </select>
+        <button onclick="nhapcauhoi();">Đồng ý</button>
+    </body>
+</html>

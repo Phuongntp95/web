@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function suadiem() {
+                document.getElementById("msv").focus();
+                var msv = document.getElementById("msv").value.trim();
+                var diem = document.getElementById("diem").value.trim();
+               
+                if (masv == "" || diem == "" || parseFloat(diem) < 0 || parseFloat(diem) > 10 || isNaN(diem))
+                {
+                    document.getElementById("thongbao").innerHTML = "Nhập sai!";
+                    return;
+                } 
+                               {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.open("get", "suadiem.jsp?masv=" + masv + "&diemthi=" + diemthi, false);
+                    xmlhttp.send();
+                    document.getElementById("ketqua").innerHTML = xmlhttp.responseText;
+                }
+
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center; color: red">Sửa Điểm</h1>
+        <div id="form">
+            Nhập Mã SV cần sửa điểm <input type="text" id="masv"><br><br>
+            nhâp Điểm mới <input type="number" id="diem"><br><br>
+            Thông Báo  <div id="thongbao"></div><br>
+            <button onclick="suadiem();">Sửa Điểm</button></div>
+    </body>
+</html>

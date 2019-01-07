@@ -1,0 +1,37 @@
+
+<html>
+    <head>
+        <title>menu thu vien</title>        
+        <style>
+            *{ margin: 0px; padding: 3px; font-size: 15px}
+            li{ list-style: none;}
+            a{text-decoration: none; color: #FFFFEE;}                        
+            .menu{ background: #00A69B;}
+            .menu>ul>li{ float: left; position: relative;}            
+            .menu ul li:hover { background: #5F5C5C;}           
+            .menu>ul>li>ul{ display: none; position: absolute; }
+            .menu>ul>li:hover ul{ display: block; background: red;top: 20px;width: 150px;}            
+            .clear{ clear: both;}
+        </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h3> Trang Thư viện - Quản lý</h3>        
+        <div class="menu">
+            <ul>
+                <li><a href="nhapsach.jsp" target="iframe">Nhập sách</a></li>   
+                <li><a href="">Cập nhật phiếu mượn</a>
+                    <ul>
+                        <li><a href="capnhat_manv.jsp" target="iframe">Cập nhật mã nv</a></li>
+                        <li><a href="capnhat_ngaytra.jsp" target="iframe">Cập nhật ngày trả</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+            <div class="clear"></div>
+        </div>                      
+        <iframe name="iframe" width="1500" height="1000" frameborder="0"></iframe>    
+       
+    </body>
+</html>
+

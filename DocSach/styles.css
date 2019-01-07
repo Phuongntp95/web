@@ -1,0 +1,219 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 16, 2017, 2:54:15 PM
+    Author     : Phuong Nguyen
+*/
+
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+    font-size: 24px;
+
+}
+
+.navbar-toggle {
+
+    background-color: #337ab7;
+
+}
+
+
+.navbar>.container-fluid .navbar-brand {
+    margin-left: -15px;
+}
+
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+@media (min-width: 992px)
+{   
+
+    .ebook .thumbnail img {
+        height: 160px;
+    }
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+    .container {
+        max-width: 888px;
+    }
+    .ebook .thumbnail img {
+        height: 160px;
+    }
+    .navbar-nav {
+        margin-left: 48px;
+    }
+
+    .navbar>.container-fluid .navbar-brand {
+        margin-left: -20px;
+    }
+
+
+}
+
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+
+    border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
+
+.pagination-sm>li>a, .pagination-sm>li>span {
+    padding: 5px 8px;
+}
+
+/* css  ebook */
+.thong_tin_ebook .btn {
+    margin-bottom: 15px;
+}
+.cover img.img-thumbnail {
+    margin-bottom: 15px;
+}
+.trangchu span.glyphicon.glyphicon-folder-open {
+    margin-right: 10px;
+}
+
+.trangchu li.cat-item{
+    padding-bottom: 10px;
+
+}
+
+.sidebar .nav>li>a {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+h5.tieude{
+    font-size:12px;
+    margin-top: 5px;
+    height: 48px;
+
+}
+h5.tieude a {
+    color:#666;
+    font-family: Tahoma,Helvetica,Verdana,Arial;
+}
+
+h1.ebook_title{
+    font-size:20px;
+    margin-top: 0px;
+    margin-bottom: 14px;
+}
+
+
+.gioi_thieu_sach {
+    margin-bottom: 20px;
+}
+
+
+.panel-primary {
+    border-color: #e5e5e5;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.ebook .thumbnail {
+
+    padding: 0px;
+    margin-bottom: 1px;
+}
+
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+
+
+
+}
+
+
+@media (max-width: 480px) { 
+    .jumbotron h2 {
+        font-size: 23px;  
+    }
+
+    .jumbotron p {
+        font-size: 16px;  
+    }
+
+    .ebook .thumbnail img {
+        height: 160px;
+    }
+}
+

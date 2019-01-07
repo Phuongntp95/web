@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <script>
+            function xemdiem()
+            {
+                var mamon = document.getElementById("mamon").value;
+                if(mamon =="")
+                    alert("mã môn là bắt buộc");
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("get", "xemdiem1.jsp?mamon="+mamon, false);
+                xmlhttp.send();
+                var kq = xmlhttp.responseText.trim();               
+                document.getElementById("kq").innerHTML = kq;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center; color: red">Xem Điểm</h1>     
+        nhập mã môn cần xem điểm <input type="text" id="mamon"><br><br><br>
+        <button onclick="xemdiem();">đồng ý</button><br><br>
+        <div id="kq"></div><br><br>
+    </body>
+
+</html>

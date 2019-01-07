@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function dangnhap() {
+                var username = document.getElementById("username").value.trim();
+                var password = document.getElementById("password").value.trim();
+                if (username == "" || password == "")
+                {
+                    document.getElementById("kq").innerHTML = "Nhập sai!";
+                } else
+                {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.open("get", "../jsp/dangnhap.jsp?username=" + username + "&password=" + password, false);
+                    xmlhttp.send();
+                    var role = xmlhttp.responseText.trim();//responseText dữ liệu ctrinh jsp trả về
+                    alert(role);
+
+                    if (role == "1")
+                    {// lưu biến username khi đăng nhập thành công. đưa dữ liệu xuống máy client
+                        sessionStorage.username = username;  
+                        xmlhttp.open("get", "menugv.html", false);
+                        xmlhttp.send();
+                        document.write(xmlhttp.responseText);
+                    } else if (role == "0")
+                    {
+                        sessionStorage.username = username;
+                        xmlhttp.open("get", "menusv.html", false);
+                        xmlhttp.send();
+                        document.write(xmlhttp.responseText);
+
+                    } else
+                        alert("sai");
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>ĐĂNG NHẬP</h1>
+        username <input type="text" id="username"><br><br><br>
+        password <input type="password" id="password"><br><br><br>
+        <button onclick="dangnhap();">Đăng Nhập</button>
+        <div id="kq"></div>
+    </body>
+</html>
